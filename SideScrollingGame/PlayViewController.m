@@ -23,6 +23,11 @@
                                    selector:@selector(MovingCarBySlider:)
                                    userInfo:nil
                                     repeats:YES];
+    [NSTimer scheduledTimerWithTimeInterval:3.0
+                                     target:self
+                                   selector:@selector(OtherCar1:)
+                                   userInfo:nil
+                                    repeats:YES];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -31,12 +36,25 @@
 }
 
 -(void)MovingCarBySlider:timer{
+    [_labelTest setHidden:YES];
+    _labelTest.text = @"Changed";
     NSLog(@"Hello, @%f", _slider.value * 327);
     [UIView animateWithDuration:0.5 animations:^{
     CGRect imageFrameHeroCar = _imageHeroCar.frame;
         imageFrameHeroCar.origin.x = _slider.value * 327;
         _imageHeroCar.frame = imageFrameHeroCar;
         }];
+    [UIView commitAnimations];
+    
+}
+
+-(void)OtherCar1:timer{
+    _labelTest.text = @"Changed";
+    [UIView animateWithDuration:2.0 animations:^{
+        CGRect imageFrameHeroCar = _imageOtherCar1.frame;
+        imageFrameHeroCar.origin.y = imageFrameHeroCar.origin.y + 600;
+        _imageOtherCar1.frame = imageFrameHeroCar;
+    }];
     [UIView commitAnimations];
 }
 
