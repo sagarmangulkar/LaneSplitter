@@ -31,7 +31,13 @@
 }
 
 -(void)MovingCarBySlider:timer{
-    NSLog(@"Hello");
+    NSLog(@"Hello, @%f", _slider.value * 327);
+    [UIView animateWithDuration:0.5 animations:^{
+    CGRect imageFrameHeroCar = _imageHeroCar.frame;
+        imageFrameHeroCar.origin.x = _slider.value * 327;
+        _imageHeroCar.frame = imageFrameHeroCar;
+        }];
+    [UIView commitAnimations];
 }
 
 
