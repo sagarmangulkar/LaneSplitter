@@ -15,6 +15,11 @@
 		47C47DEE1E720EF100CB8F9A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 47C47DEC1E720EF100CB8F9A /* LaunchScreen.storyboard */; };
 		47C47DF91E720EF100CB8F9A /* SideScrollingGameTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 47C47DF81E720EF100CB8F9A /* SideScrollingGameTests.m */; };
 		47C47E041E720EF100CB8F9A /* SideScrollingGameUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 47C47E031E720EF100CB8F9A /* SideScrollingGameUITests.m */; };
+		47E7204E1E7252CC0036C939 /* PlayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 47E7204D1E7252CC0036C939 /* PlayViewController.m */; };
+		47E720501E725A250036C939 /* Road.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 47E7204F1E725A250036C939 /* Road.jpg */; };
+		47E720541E725C490036C939 /* Lane-Splitter Start Background.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 47E720531E725C490036C939 /* Lane-Splitter Start Background.jpg */; };
+		47E720561E725EEB0036C939 /* HeroCar.png in Resources */ = {isa = PBXBuildFile; fileRef = 47E720551E725EEB0036C939 /* HeroCar.png */; };
+		47E720581E7260070036C939 /* OtherCar1.png in Resources */ = {isa = PBXBuildFile; fileRef = 47E720571E7260070036C939 /* OtherCar1.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +56,12 @@
 		47C47DFF1E720EF100CB8F9A /* SideScrollingGameUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SideScrollingGameUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		47C47E031E720EF100CB8F9A /* SideScrollingGameUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SideScrollingGameUITests.m; sourceTree = "<group>"; };
 		47C47E051E720EF100CB8F9A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		47E7204C1E7252CC0036C939 /* PlayViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlayViewController.h; sourceTree = "<group>"; };
+		47E7204D1E7252CC0036C939 /* PlayViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlayViewController.m; sourceTree = "<group>"; };
+		47E7204F1E725A250036C939 /* Road.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Road.jpg; sourceTree = SOURCE_ROOT; };
+		47E720531E725C490036C939 /* Lane-Splitter Start Background.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "Lane-Splitter Start Background.jpg"; path = "../Lane-Splitter Start Background.jpg"; sourceTree = "<group>"; };
+		47E720551E725EEB0036C939 /* HeroCar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = HeroCar.png; sourceTree = SOURCE_ROOT; };
+		47E720571E7260070036C939 /* OtherCar1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = OtherCar1.png; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,6 +117,10 @@
 				47C47DE41E720EF100CB8F9A /* ViewController.h */,
 				47C47DE51E720EF100CB8F9A /* ViewController.m */,
 				47C47DE71E720EF100CB8F9A /* Main.storyboard */,
+				47E720571E7260070036C939 /* OtherCar1.png */,
+				47C47DDF1E720EF100CB8F9A /* main.m */,
+				47E7204C1E7252CC0036C939 /* PlayViewController.h */,
+				47E7204D1E7252CC0036C939 /* PlayViewController.m */,
 				47C47DEA1E720EF100CB8F9A /* Assets.xcassets */,
 				47C47DEC1E720EF100CB8F9A /* LaunchScreen.storyboard */,
 				47C47DEF1E720EF100CB8F9A /* Info.plist */,
@@ -117,7 +132,9 @@
 		47C47DDE1E720EF100CB8F9A /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				47C47DDF1E720EF100CB8F9A /* main.m */,
+				47E720551E725EEB0036C939 /* HeroCar.png */,
+				47E720531E725C490036C939 /* Lane-Splitter Start Background.jpg */,
+				47E7204F1E725A250036C939 /* Road.jpg */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -243,7 +260,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				47E720561E725EEB0036C939 /* HeroCar.png in Resources */,
+				47E720541E725C490036C939 /* Lane-Splitter Start Background.jpg in Resources */,
 				47C47DEE1E720EF100CB8F9A /* LaunchScreen.storyboard in Resources */,
+				47E720501E725A250036C939 /* Road.jpg in Resources */,
+				47E720581E7260070036C939 /* OtherCar1.png in Resources */,
 				47C47DEB1E720EF100CB8F9A /* Assets.xcassets in Resources */,
 				47C47DE91E720EF100CB8F9A /* Main.storyboard in Resources */,
 			);
@@ -270,6 +291,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				47E7204E1E7252CC0036C939 /* PlayViewController.m in Sources */,
 				47C47DE61E720EF100CB8F9A /* ViewController.m in Sources */,
 				47C47DE31E720EF100CB8F9A /* AppDelegate.m in Sources */,
 				47C47DE01E720EF100CB8F9A /* main.m in Sources */,
@@ -498,6 +520,7 @@
 				47C47E0A1E720EF100CB8F9A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		47C47E0B1E720EF100CB8F9A /* Build configuration list for PBXNativeTarget "SideScrollingGameTests" */ = {
 			isa = XCConfigurationList;
@@ -506,6 +529,7 @@
 				47C47E0D1E720EF100CB8F9A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		47C47E0E1E720EF100CB8F9A /* Build configuration list for PBXNativeTarget "SideScrollingGameUITests" */ = {
 			isa = XCConfigurationList;
@@ -514,6 +538,7 @@
 				47C47E101E720EF100CB8F9A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

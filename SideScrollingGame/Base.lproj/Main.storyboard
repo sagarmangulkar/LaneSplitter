@@ -14,11 +14,14 @@
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Lane-Splitter Start Background.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="Hfh-rx-ZqC">
+                                <rect key="frame" x="0.0" y="-8" width="320" height="568"/>
+                            </imageView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="p5y-RV-zVt">
-                                <rect key="frame" x="163" y="234" width="137" height="53"/>
+                                <rect key="frame" x="44" y="368" width="137" height="53"/>
                                 <color key="backgroundColor" red="1" green="0.58665507096624314" blue="0.2064854636589003" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="41"/>
                                 <state key="normal" title="Start"/>
@@ -29,19 +32,19 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
                         <outlet property="buttonStart" destination="p5y-RV-zVt" id="1WB-MQ-LTH"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="304.5" y="418.5"/>
+            <point key="canvasLocation" x="304" y="418"/>
         </scene>
-        <!--View Controller-->
+        <!--Play View Controller-->
         <scene sceneID="a9z-gU-09S">
             <objects>
-                <viewController id="pUt-Ib-ZkG" sceneMemberID="viewController">
+                <viewController id="pUt-Ib-ZkG" customClass="PlayViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="sAd-BR-LQu"/>
                         <viewControllerLayoutGuide type="bottom" id="jXb-ci-RVW"/>
@@ -51,28 +54,57 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Game Started" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aG5-lD-pSV">
-                                <rect key="frame" x="65" y="198" width="190" height="53"/>
+                                <rect key="frame" x="65" y="306" width="190" height="53"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="28"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Yvp-n9-nGf">
-                                <rect key="frame" x="97" y="297" width="137" height="61"/>
-                                <color key="backgroundColor" red="1" green="0.58665507100000003" blue="0.20648546370000001" alpha="1" colorSpace="calibratedRGB"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="41"/>
-                                <state key="normal" title="EXIT"/>
-                                <connections>
-                                    <segue destination="BYZ-38-t0r" kind="presentation" id="Rbh-wv-DD4"/>
-                                </connections>
-                            </button>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="zY9-dE-yJc">
+                                <rect key="frame" x="0.0" y="526" width="320" height="42"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Yvp-n9-nGf">
+                                        <rect key="frame" x="216" y="0.0" width="104" height="42"/>
+                                        <color key="backgroundColor" red="1" green="0.58665507100000003" blue="0.20648546370000001" alpha="1" colorSpace="calibratedRGB"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="41"/>
+                                        <state key="normal" title="EXIT"/>
+                                        <connections>
+                                            <action selector="EventButtonExit:" destination="pUt-Ib-ZkG" eventType="touchUpOutside" id="Xwt-Yw-MfY"/>
+                                            <segue destination="BYZ-38-t0r" kind="modal" id="g6j-Ra-I47"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" red="1" green="0.91072817157196484" blue="0.86356839735981306" alpha="1" colorSpace="calibratedRGB"/>
+                            </view>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Road.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="tDH-rA-tRl">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="525"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="OtherCar1.png" translatesAutoresizingMaskIntoConstraints="NO" id="Vrl-jT-mQ9">
+                                <rect key="frame" x="186" y="177" width="85" height="96"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="HeroCar.png" translatesAutoresizingMaskIntoConstraints="NO" id="HLI-OF-NSk">
+                                <rect key="frame" x="123" y="351" width="58" height="128"/>
+                            </imageView>
+                            <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="FUO-Lb-VXg">
+                                <rect key="frame" x="71" y="495" width="178" height="31"/>
+                            </slider>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.62349829456200068" green="1" blue="0.36071589790920844" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                    <connections>
+                        <outlet property="imageHeroCar" destination="HLI-OF-NSk" id="CEv-1b-UeC"/>
+                        <outlet property="slider" destination="FUO-Lb-VXg" id="Ahl-KM-hTz"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RIc-HD-rip" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="562" y="425"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="HeroCar.png" width="640" height="1280"/>
+        <image name="Lane-Splitter Start Background.jpg" width="600" height="318"/>
+        <image name="OtherCar1.png" width="256" height="256"/>
+        <image name="Road.jpg" width="300" height="250"/>
+    </resources>
 </document>
