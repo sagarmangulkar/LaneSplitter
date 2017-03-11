@@ -61,6 +61,9 @@
                             </imageView>
                             <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="FUO-Lb-VXg">
                                 <rect key="frame" x="71" y="495" width="178" height="31"/>
+                                <connections>
+                                    <action selector="SliderValueChanged:" destination="pUt-Ib-ZkG" eventType="valueChanged" id="RgU-XW-zj8"/>
+                                </connections>
                             </slider>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="zY9-dE-yJc">
                                 <rect key="frame" x="0.0" y="526" width="320" height="42"/>
