@@ -20,6 +20,7 @@
 		47E720541E725C490036C939 /* Lane-Splitter Start Background.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 47E720531E725C490036C939 /* Lane-Splitter Start Background.jpg */; };
 		47E720561E725EEB0036C939 /* HeroCar.png in Resources */ = {isa = PBXBuildFile; fileRef = 47E720551E725EEB0036C939 /* HeroCar.png */; };
 		47E720581E7260070036C939 /* OtherCar1.png in Resources */ = {isa = PBXBuildFile; fileRef = 47E720571E7260070036C939 /* OtherCar1.png */; };
+		52F5BD391E762E97002CAA5E /* OtherCar2.png in Resources */ = {isa = PBXBuildFile; fileRef = 52F5BD381E762E97002CAA5E /* OtherCar2.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -62,6 +63,7 @@
 		47E720531E725C490036C939 /* Lane-Splitter Start Background.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "Lane-Splitter Start Background.jpg"; path = "../Lane-Splitter Start Background.jpg"; sourceTree = "<group>"; };
 		47E720551E725EEB0036C939 /* HeroCar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = HeroCar.png; sourceTree = SOURCE_ROOT; };
 		47E720571E7260070036C939 /* OtherCar1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = OtherCar1.png; sourceTree = SOURCE_ROOT; };
+		52F5BD381E762E97002CAA5E /* OtherCar2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = OtherCar2.png; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -117,7 +119,6 @@
 				47C47DE41E720EF100CB8F9A /* ViewController.h */,
 				47C47DE51E720EF100CB8F9A /* ViewController.m */,
 				47C47DE71E720EF100CB8F9A /* Main.storyboard */,
-				47E720571E7260070036C939 /* OtherCar1.png */,
 				47C47DDF1E720EF100CB8F9A /* main.m */,
 				47E7204C1E7252CC0036C939 /* PlayViewController.h */,
 				47E7204D1E7252CC0036C939 /* PlayViewController.m */,
@@ -132,6 +133,8 @@
 		47C47DDE1E720EF100CB8F9A /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				47E720571E7260070036C939 /* OtherCar1.png */,
+				52F5BD381E762E97002CAA5E /* OtherCar2.png */,
 				47E720551E725EEB0036C939 /* HeroCar.png */,
 				47E720531E725C490036C939 /* Lane-Splitter Start Background.jpg */,
 				47E7204F1E725A250036C939 /* Road.jpg */,
@@ -262,6 +265,7 @@
 			files = (
 				47E720561E725EEB0036C939 /* HeroCar.png in Resources */,
 				47E720541E725C490036C939 /* Lane-Splitter Start Background.jpg in Resources */,
+				52F5BD391E762E97002CAA5E /* OtherCar2.png in Resources */,
 				47C47DEE1E720EF100CB8F9A /* LaunchScreen.storyboard in Resources */,
 				47E720501E725A250036C939 /* Road.jpg in Resources */,
 				47E720581E7260070036C939 /* OtherCar1.png in Resources */,

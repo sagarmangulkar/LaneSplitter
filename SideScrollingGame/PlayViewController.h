@@ -13,6 +13,8 @@
 @property (strong, nonatomic) IBOutlet UISlider *slider;
 
 @property (strong, nonatomic) IBOutlet UIImageView *imageOtherCar1;
-@property (strong, nonatomic) IBOutlet UILabel *labelTest;
+@property (strong, nonatomic) IBOutlet UIImageView *imageOtherCar2;
+
+@property (strong, nonatomic) IBOutlet UILabel *labelGameStarted;
 
 @end
