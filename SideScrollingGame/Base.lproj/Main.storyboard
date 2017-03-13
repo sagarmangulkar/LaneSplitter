@@ -63,15 +63,15 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="OtherCar2.png" translatesAutoresizingMaskIntoConstraints="NO" id="RVm-Hz-zOx">
-                                <rect key="frame" x="57" y="155" width="41" height="95"/>
+                                <rect key="frame" x="57" y="155" width="50" height="100"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="OtherCar1.png" translatesAutoresizingMaskIntoConstraints="NO" id="Vrl-jT-mQ9">
-                                <rect key="frame" x="221" y="93" width="41" height="95"/>
+                                <rect key="frame" x="221" y="93" width="50" height="100"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="HeroCar.png" translatesAutoresizingMaskIntoConstraints="NO" id="HLI-OF-NSk">
-                                <rect key="frame" x="135" y="391" width="46" height="89"/>
+                                <rect key="frame" x="135" y="391" width="50" height="100"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="FUO-Lb-VXg">
@@ -81,6 +81,10 @@
                                     <action selector="SliderValueChanged:" destination="pUt-Ib-ZkG" eventType="valueChanged" id="RgU-XW-zj8"/>
                                 </connections>
                             </slider>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="game-over.png" translatesAutoresizingMaskIntoConstraints="NO" id="IAV-Zv-h7g">
+                                <rect key="frame" x="32" y="220" width="240" height="128"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="zY9-dE-yJc">
                                 <rect key="frame" x="0.0" y="526" width="320" height="42"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -99,21 +103,15 @@
                                 </subviews>
                                 <color key="backgroundColor" red="1" green="0.91072817157196484" blue="0.86356839735981306" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </view>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Game Started" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aG5-lD-pSV">
-                                <rect key="frame" x="57" y="73" width="190" height="53"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="28"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                         </subviews>
                         <color key="backgroundColor" red="0.62349829456200068" green="1" blue="0.36071589790920844" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
                     <connections>
+                        <outlet property="imageGameOver" destination="IAV-Zv-h7g" id="FOI-y8-Rb0"/>
                         <outlet property="imageHeroCar" destination="HLI-OF-NSk" id="CEv-1b-UeC"/>
                         <outlet property="imageOtherCar1" destination="Vrl-jT-mQ9" id="YsN-dd-Tmt"/>
                         <outlet property="imageOtherCar2" destination="RVm-Hz-zOx" id="7rt-RM-p9I"/>
-                        <outlet property="labelGameStarted" destination="aG5-lD-pSV" id="vJQ-oX-pux"/>
+                        <outlet property="imageTemp2" destination="tDH-rA-tRl" id="Ka4-Na-2XN"/>
                         <outlet property="slider" destination="FUO-Lb-VXg" id="Ahl-KM-hTz"/>
                     </connections>
                 </viewController>
@@ -128,5 +126,6 @@
         <image name="OtherCar1.png" width="114" height="256"/>
         <image name="OtherCar2.png" width="359" height="726"/>
         <image name="Road.jpg" width="300" height="250"/>
+        <image name="game-over.png" width="660" height="372"/>
     </resources>
 </document>

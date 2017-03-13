@@ -20,6 +20,8 @@
 		47E720541E725C490036C939 /* Lane-Splitter Start Background.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 47E720531E725C490036C939 /* Lane-Splitter Start Background.jpg */; };
 		47E720561E725EEB0036C939 /* HeroCar.png in Resources */ = {isa = PBXBuildFile; fileRef = 47E720551E725EEB0036C939 /* HeroCar.png */; };
 		47E720581E7260070036C939 /* OtherCar1.png in Resources */ = {isa = PBXBuildFile; fileRef = 47E720571E7260070036C939 /* OtherCar1.png */; };
+		52B496341E764AFE00F70E21 /* game-over.png in Resources */ = {isa = PBXBuildFile; fileRef = 52B496331E764AFE00F70E21 /* game-over.png */; };
+		52B496361E7651AC00F70E21 /* CrashedCar.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 52B496351E7651AC00F70E21 /* CrashedCar.jpg */; };
 		52F5BD391E762E97002CAA5E /* OtherCar2.png in Resources */ = {isa = PBXBuildFile; fileRef = 52F5BD381E762E97002CAA5E /* OtherCar2.png */; };
 /* End PBXBuildFile section */
 
@@ -63,6 +65,8 @@
 		47E720531E725C490036C939 /* Lane-Splitter Start Background.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "Lane-Splitter Start Background.jpg"; path = "../Lane-Splitter Start Background.jpg"; sourceTree = "<group>"; };
 		47E720551E725EEB0036C939 /* HeroCar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = HeroCar.png; sourceTree = SOURCE_ROOT; };
 		47E720571E7260070036C939 /* OtherCar1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = OtherCar1.png; sourceTree = SOURCE_ROOT; };
+		52B496331E764AFE00F70E21 /* game-over.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "game-over.png"; sourceTree = SOURCE_ROOT; };
+		52B496351E7651AC00F70E21 /* CrashedCar.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = CrashedCar.jpg; path = ../CrashedCar.jpg; sourceTree = "<group>"; };
 		52F5BD381E762E97002CAA5E /* OtherCar2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = OtherCar2.png; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
@@ -133,6 +137,8 @@
 		47C47DDE1E720EF100CB8F9A /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				52B496351E7651AC00F70E21 /* CrashedCar.jpg */,
+				52B496331E764AFE00F70E21 /* game-over.png */,
 				47E720571E7260070036C939 /* OtherCar1.png */,
 				52F5BD381E762E97002CAA5E /* OtherCar2.png */,
 				47E720551E725EEB0036C939 /* HeroCar.png */,
@@ -264,9 +270,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				47E720561E725EEB0036C939 /* HeroCar.png in Resources */,
+				52B496361E7651AC00F70E21 /* CrashedCar.jpg in Resources */,
 				47E720541E725C490036C939 /* Lane-Splitter Start Background.jpg in Resources */,
 				52F5BD391E762E97002CAA5E /* OtherCar2.png in Resources */,
 				47C47DEE1E720EF100CB8F9A /* LaunchScreen.storyboard in Resources */,
+				52B496341E764AFE00F70E21 /* game-over.png in Resources */,
 				47E720501E725A250036C939 /* Road.jpg in Resources */,
 				47E720581E7260070036C939 /* OtherCar1.png in Resources */,
 				47C47DEB1E720EF100CB8F9A /* Assets.xcassets in Resources */,

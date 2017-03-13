@@ -15,6 +15,7 @@
 @property (strong, nonatomic) IBOutlet UIImageView *imageOtherCar1;
 @property (strong, nonatomic) IBOutlet UIImageView *imageOtherCar2;
 
-@property (strong, nonatomic) IBOutlet UILabel *labelGameStarted;
+@property (strong, nonatomic) IBOutlet UIImageView *imageGameOver;
+@property (strong, nonatomic) IBOutlet UIImageView *imageTemp2;
 
 @end
