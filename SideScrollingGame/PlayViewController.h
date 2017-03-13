@@ -17,5 +17,7 @@
 
 @property (strong, nonatomic) IBOutlet UIImageView *imageGameOver;
 @property (strong, nonatomic) IBOutlet UIImageView *imageTemp2;
+@property (strong, nonatomic) IBOutlet UILabel *labelYourScore;
+@property (strong, nonatomic) IBOutlet UILabel *labelMaxScore;
 
 @end

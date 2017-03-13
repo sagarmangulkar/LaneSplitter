@@ -8,6 +8,8 @@
 
 #import "PlayViewController.h"
 
+NSString *maxScore = @"0";
+
 @interface PlayViewController ()
 
 @end
@@ -28,7 +30,7 @@ int resetValue;
     [self StartingState];
     [NSTimer scheduledTimerWithTimeInterval:0.1
                                      target:self
-                                   selector:@selector(CheckCrash:)
+                                   selector:@selector(CheckCrashByTimer:)
                                    userInfo:nil repeats:YES];
  
     [NSTimer scheduledTimerWithTimeInterval:1
@@ -60,6 +62,9 @@ int resetValue;
     isGameOvered = false;
     resetValue = -100;
     [_imageGameOver setHidden:YES];
+    [_slider setHidden:NO];
+    _labelMaxScore.text = maxScore;
+    _labelYourScore.text = @"0";
     NSLog(@"---------Starting state Called-----IsCrashed: @%hhd, GOImage: @%d------",isCrashed, ![_imageGameOver isHidden]);
     CGRect frameOtherCar1 = _imageOtherCar1.frame;
     frameOtherCar1.origin.y = 50;
@@ -69,10 +74,25 @@ int resetValue;
     _imageOtherCar2.frame = frameOtherCar2;
 }
 
+
+-(void)SetMaxScore{
+    //-----------Max score logic--------------
+    if (!isGameOvered) {
+        _labelYourScore.text = [NSString stringWithFormat:@"%ld", (long)([_labelYourScore.text integerValue] + 1)];
+        if ([_labelYourScore.text integerValue] > [maxScore integerValue]) {
+            maxScore = _labelYourScore.text;
+            _labelMaxScore.text = maxScore;
+    }
+    }
+}
+
 -(void)GameOver{
  //   NSLog(@"---------Before Game Over Called-----IsCrashed: @%hhd, GOImage: @%d------",isCrashed, ![_imageGameOver isHidden]);
     isCrashed = true;
     isGameOvered = true;
+    [_slider setHidden:YES];
+    [_imageOtherCar1 setHidden:YES];
+    [_imageOtherCar2 setHidden:YES];
 //    resetValue = 900;
     [_imageGameOver setHidden:NO];
     UIImage *image = [UIImage imageNamed:@"CrashedCar.jpg"];
@@ -108,22 +128,23 @@ int resetValue;
 
 -(void)VibrateHeroCar:timer{
     // NSLog(@"VibrateHeroCar, Crashed: @%hhd", isCrashed);
-    if (!isCrashed) {
+//    if (!isCrashed) {
+    [self SetMaxScore];
         [UIView animateWithDuration:0.5 animations:^{
             CGRect frameHeroCar = _imageHeroCar.frame;
-            frameHeroCar.origin.x = frameHeroCar.origin.x + 10;
+            frameHeroCar.origin.x = frameHeroCar.origin.x + 5;
             _imageHeroCar.frame = frameHeroCar;
         } completion:^(BOOL finished){
             [UIView animateWithDuration:0.5 animations:^{
                 CGRect frameHeroCar = _imageHeroCar.frame;
-                frameHeroCar.origin.x = frameHeroCar.origin.x - 10;
+                frameHeroCar.origin.x = frameHeroCar.origin.x - 5;
                 _imageHeroCar.frame = frameHeroCar;
             }];
         }];
         [UIView commitAnimations];
 //        [self Crashed:_imageOtherCar1];
 //        [self Crashed:_imageOtherCar2];
-    }
+//    }
 }
 
 -(BOOL)IsCrashed:(UIImageView*)imageOtherCarTemp{
@@ -140,31 +161,26 @@ int resetValue;
     return false;
 }
 
--(void)CheckCrash:timer{
-    //NSLog(@"Checking Crash...!");
-    CGRect frameHeroCar = _imageHeroCar.frame;
-    CGRect frameOtherCar1 = _imageOtherCar1.frame;
-  //  NSLog(@"Cordinates:- HeroCar: X = @%f, Y = @%f; OtherCar: X = @%f, Y = @%f",
-   //       frameHeroCar.origin.x,
-   //       frameHeroCar.origin.y,
-   //       frameOtherCar1.origin.x,
-   //       frameOtherCar1.origin.y);
-    if ([self IsCrashed:_imageOtherCar1]){// && !isGameOvered) {
-//        isCrashedWithCar1 = true;
+
+-(void)CheckCrash{
+    if ([self IsCrashed:_imageOtherCar1]){
         [self GameOver];
     }
-    if ([self IsCrashed:_imageOtherCar2]){// && !isGameOvered) {
- //       isGameOvered = true;
-//        isCrashedWithCar2 = true;
+    if ([self IsCrashed:_imageOtherCar2]){
         [self GameOver];
         NSLog(@"Second crashed...!");
     }
+}
+
+-(void)CheckCrashByTimer:timer{
+    [self CheckCrash];
 }
 
 
 
 - (IBAction)SliderValueChanged:(id)sender {
     isCrashed = false;
+    isGameOvered = false;
  //   if (!isCrashed) {
         //moving hero car right-left
         [UIView animateWithDuration:0.5 animations:^{
@@ -179,10 +195,53 @@ int resetValue;
 //        [self Crashed:_imageOtherCar2];
  //   }
 }
--(void)ResetCarPosition:(UIImageView*)imageTemp{
+-(void)ResetCar1Position:(UIImageView*)imageTemp{
     if (imageTemp.frame.origin.y > 600) {
+        int randomX = arc4random_uniform(270);
         CGRect frameTemp = imageTemp.frame;
+        CGRect frameOtherCar2 = _imageOtherCar2.frame;
         frameTemp.origin.y = resetValue;
+        if ((((randomX + frameOtherCar2.size.width > frameOtherCar2.origin.x) &&
+                 (randomX + frameOtherCar2.size.width < frameOtherCar2.origin.x + frameOtherCar2.size.width)) ||
+                ((randomX > frameOtherCar2.origin.x)
+                 && (randomX < frameOtherCar2.origin.x + frameOtherCar2.size.width)))) {
+                    if (randomX <= 220 && randomX > frameOtherCar2.origin.x) {
+                        randomX = randomX + frameOtherCar2.size.width;
+                    }
+                    else if (randomX >= 0 && randomX < frameOtherCar2.origin.x) {
+                        randomX = randomX + frameOtherCar2.size.width;
+                    }
+                    else{
+                        randomX = 150;
+                    }
+                }
+        frameTemp.origin.x = randomX;
+        imageTemp.frame = frameTemp;
+    }
+}
+
+
+-(void)ResetCar2Position:(UIImageView*)imageTemp{
+    if (imageTemp.frame.origin.y > 600) {
+        int randomX = arc4random_uniform(270);
+        CGRect frameTemp = imageTemp.frame;
+        CGRect frameOtherCar1 = _imageOtherCar1.frame;
+        frameTemp.origin.y = resetValue;
+        if ((((randomX + frameOtherCar1.size.width > frameOtherCar1.origin.x) &&
+              (randomX + frameOtherCar1.size.width < frameOtherCar1.origin.x + frameOtherCar1.size.width)) ||
+             ((randomX > frameOtherCar1.origin.x)
+              && (randomX < frameOtherCar1.origin.x + frameOtherCar1.size.width)))) {
+                 if (randomX <= 220 && randomX > frameOtherCar1.origin.x) {
+                     randomX = randomX + frameOtherCar1.size.width;
+                 }
+                 else if (randomX >= 0 && randomX < frameOtherCar1.origin.x) {
+                     randomX = randomX + frameOtherCar1.size.width;
+                 }
+                 else{
+                     randomX = 150;
+                 }
+             }
+        frameTemp.origin.x = randomX;
         imageTemp.frame = frameTemp;
     }
 }
@@ -194,7 +253,7 @@ int resetValue;
             frameOtherCar.origin.y = frameOtherCar.origin.y + 40;
             _imageOtherCar1.frame = frameOtherCar;
         } completion:^(BOOL finished){
-            [self ResetCarPosition:_imageOtherCar1];
+            [self ResetCar1Position:_imageOtherCar1];
         }];
         [UIView commitAnimations];
    //     isCrashedWithCar2 = false;
@@ -208,7 +267,7 @@ int resetValue;
             frameOtherCar.origin.y = frameOtherCar.origin.y + 30;
             _imageOtherCar2.frame = frameOtherCar;
         } completion:^(BOOL finished){
-            [self ResetCarPosition:_imageOtherCar2];
+            [self ResetCar2Position:_imageOtherCar2];
         }];
         [UIView commitAnimations];
   //      isCrashedWithCar1 = false;
