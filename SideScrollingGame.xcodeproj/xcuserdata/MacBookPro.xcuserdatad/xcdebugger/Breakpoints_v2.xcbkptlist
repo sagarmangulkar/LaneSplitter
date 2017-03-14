@@ -10,11 +10,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "SideScrollingGame/PlayViewController.m"
-            timestampString = "511155162.618157"
+            timestampString = "511156609.590098"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "196"
-            endingLineNumber = "196"
+            startingLineNumber = "206"
+            endingLineNumber = "206"
             landmarkName = "-SliderValueChanged:"
             landmarkType = "7">
          </BreakpointContent>
@@ -26,11 +26,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "SideScrollingGame/PlayViewController.m"
-            timestampString = "511155054.548764"
+            timestampString = "511156609.590098"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "98"
-            endingLineNumber = "98"
+            startingLineNumber = "102"
+            endingLineNumber = "102"
             landmarkName = "-GameOver"
             landmarkType = "7">
          </BreakpointContent>
@@ -42,11 +42,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "SideScrollingGame/PlayViewController.m"
-            timestampString = "511155162.618157"
+            timestampString = "511156609.590098"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "167"
-            endingLineNumber = "167"
+            startingLineNumber = "177"
+            endingLineNumber = "177"
             landmarkName = "-CheckCrash"
             landmarkType = "7">
          </BreakpointContent>
@@ -58,11 +58,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "SideScrollingGame/PlayViewController.m"
-            timestampString = "511155162.618157"
+            timestampString = "511156609.590098"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "168"
-            endingLineNumber = "168"
+            startingLineNumber = "178"
+            endingLineNumber = "178"
             landmarkName = "-CheckCrash"
             landmarkType = "7">
          </BreakpointContent>
@@ -74,11 +74,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "SideScrollingGame/PlayViewController.m"
-            timestampString = "511155054.548764"
+            timestampString = "511156609.590098"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "69"
-            endingLineNumber = "69"
+            startingLineNumber = "73"
+            endingLineNumber = "73"
             landmarkName = "-StartingState"
             landmarkType = "7">
          </BreakpointContent>
@@ -90,11 +90,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "SideScrollingGame/PlayViewController.m"
-            timestampString = "511155162.618157"
+            timestampString = "511156609.590098"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "172"
-            endingLineNumber = "172"
+            startingLineNumber = "182"
+            endingLineNumber = "182"
             landmarkName = "-CheckCrash"
             landmarkType = "7">
          </BreakpointContent>
@@ -106,11 +106,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "SideScrollingGame/PlayViewController.m"
-            timestampString = "511155162.618157"
+            timestampString = "511156609.590098"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "153"
-            endingLineNumber = "153"
+            startingLineNumber = "163"
+            endingLineNumber = "163"
             landmarkName = "-IsCrashed:"
             landmarkType = "7">
          </BreakpointContent>
@@ -122,11 +122,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "SideScrollingGame/PlayViewController.m"
-            timestampString = "511155162.618157"
+            timestampString = "511156609.590098"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "157"
-            endingLineNumber = "157"
+            startingLineNumber = "167"
+            endingLineNumber = "167"
             landmarkName = "-IsCrashed:"
             landmarkType = "7">
          </BreakpointContent>
@@ -138,11 +138,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "SideScrollingGame/PlayViewController.m"
-            timestampString = "511155162.618157"
+            timestampString = "511156609.590098"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "150"
-            endingLineNumber = "150"
+            startingLineNumber = "160"
+            endingLineNumber = "160"
             landmarkName = "-IsCrashed:"
             landmarkType = "7">
          </BreakpointContent>
@@ -154,11 +154,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "SideScrollingGame/PlayViewController.m"
-            timestampString = "511155162.618157"
+            timestampString = "511156609.590098"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "151"
-            endingLineNumber = "151"
+            startingLineNumber = "161"
+            endingLineNumber = "161"
             landmarkName = "-IsCrashed:"
             landmarkType = "7">
          </BreakpointContent>

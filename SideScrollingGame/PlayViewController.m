@@ -63,6 +63,10 @@ NSTimer *timer4;
 -(void)StartingState{
     isCrashed = false;
     
+    [_labelGODisplay1 setHidden:YES];
+    [_labelGODisplay2 setHidden:YES];
+    [_labelMaxScoreGO setHidden:YES];
+    [_LabelYourScoreGO setHidden:YES];
 //    isCrashedWithCar1 = false;
 //    isCrashedWithCar2 = false;
     isGameOvered = false;
@@ -103,6 +107,12 @@ NSTimer *timer4;
     timer3 = nil;
     [timer4 invalidate];
     timer4 = nil;
+    [_labelGODisplay1 setHidden:NO];
+    [_labelGODisplay2 setHidden:NO];
+    [_labelMaxScoreGO setHidden:NO];
+    [_LabelYourScoreGO setHidden:NO];
+    _labelMaxScoreGO.text = _labelMaxScore.text;
+    _LabelYourScoreGO.text = _labelYourScore.text;
     _imageGameOver.layer.zPosition = 1000;
     //NSLog(@"---------Before Game Over Called-----IsCrashed: @%hhd, isVisibleGOImage: @%d------",isCrashed, ![_imageGameOver isHidden]);
     isCrashed = true;
@@ -149,7 +159,7 @@ NSTimer *timer4;
     if (!isGameOvered) {
      CGRect frameHeroCar = _imageHeroCar.frame;
      CGRect frameOtherCar = imageOtherCarTemp.frame;
-    if (((frameHeroCar.origin.y <= frameOtherCar.origin.y + frameOtherCar.size.height - 40) && (frameHeroCar.origin.y + frameHeroCar.size.height > frameOtherCar.origin.y + frameOtherCar.size.height))) {
+    if (((frameHeroCar.origin.y <= frameOtherCar.origin.y + frameOtherCar.size.height - 40) && (frameHeroCar.origin.y + frameHeroCar.size.height > frameOtherCar.origin.y + frameOtherCar.size.height - 40))) {
         if (((frameHeroCar.origin.x + frameHeroCar.size.width > frameOtherCar.origin.x) &&
              (frameHeroCar.origin.x + frameHeroCar.size.width < frameOtherCar.origin.x + frameOtherCar.size.width)) ||
             ((frameHeroCar.origin.x > frameOtherCar.origin.x)

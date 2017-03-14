@@ -19,5 +19,9 @@
 @property (strong, nonatomic) IBOutlet UIImageView *imageTemp2;
 @property (strong, nonatomic) IBOutlet UILabel *labelYourScore;
 @property (strong, nonatomic) IBOutlet UILabel *labelMaxScore;
+@property (strong, nonatomic) IBOutlet UILabel *LabelYourScoreGO;
+@property (strong, nonatomic) IBOutlet UILabel *labelMaxScoreGO;
+@property (strong, nonatomic) IBOutlet UILabel *labelGODisplay1;
+@property (strong, nonatomic) IBOutlet UILabel *labelGODisplay2;
 
 @end
