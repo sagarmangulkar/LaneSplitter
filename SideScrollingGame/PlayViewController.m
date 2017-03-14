@@ -18,32 +18,37 @@ NSString *maxScore = @"0";
 BOOL isCrashed = false;
 //BOOL isCrashedWithCar1 = false;
 //BOOL isCrashedWithCar2 = false;
-BOOL isGameOvered = false;
+BOOL isGameOvered;
 int resetValue;
+NSTimer *timer1;
+NSTimer *timer2;
+NSTimer *timer3;
+NSTimer *timer4;
+
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     isCrashed = false;
     
-    NSLog(@"View loaded, Crashed: @%hhd", isCrashed);
+   // NSLog(@"View loaded, Crashed: @%hhd", isCrashed);
     [self StartingState];
-    [NSTimer scheduledTimerWithTimeInterval:0.1
+    timer1 = [NSTimer scheduledTimerWithTimeInterval:0.1
                                      target:self
                                    selector:@selector(CheckCrashByTimer:)
                                    userInfo:nil repeats:YES];
  
-    [NSTimer scheduledTimerWithTimeInterval:1
+    timer2 = [NSTimer scheduledTimerWithTimeInterval:1
                                      target:self
                                    selector:@selector(VibrateHeroCar:)
                                    userInfo:nil repeats:YES];
 
-    [NSTimer scheduledTimerWithTimeInterval:0.2
+    timer3 = [NSTimer scheduledTimerWithTimeInterval:0.2
                                      target:self
                                    selector:@selector(OtherCar1:)
                                    userInfo:nil
                                     repeats:YES];
-    [NSTimer scheduledTimerWithTimeInterval:0.2
+    timer4 = [NSTimer scheduledTimerWithTimeInterval:0.2
                                      target:self
                                    selector:@selector(OtherCar2:)
                                    userInfo:nil
@@ -57,21 +62,24 @@ int resetValue;
 
 -(void)StartingState{
     isCrashed = false;
+    
 //    isCrashedWithCar1 = false;
 //    isCrashedWithCar2 = false;
     isGameOvered = false;
+    //NSLog(@"StartingState:- isGameOver:@%d",isGameOvered);
     resetValue = -100;
     [_imageGameOver setHidden:YES];
     [_slider setHidden:NO];
     _labelMaxScore.text = maxScore;
     _labelYourScore.text = @"0";
-    NSLog(@"---------Starting state Called-----IsCrashed: @%hhd, GOImage: @%d------",isCrashed, ![_imageGameOver isHidden]);
+   // NSLog(@"---------Starting state Called-----IsCrashed: @%hhd, GOImage: @%d---",isCrashed, ![_imageGameOver isHidden]);
     CGRect frameOtherCar1 = _imageOtherCar1.frame;
     frameOtherCar1.origin.y = 50;
     _imageOtherCar1.frame = frameOtherCar1;
     CGRect frameOtherCar2 = _imageOtherCar2.frame;
     frameOtherCar2.origin.y = 50;
     _imageOtherCar2.frame = frameOtherCar2;
+    
 }
 
 
@@ -87,9 +95,19 @@ int resetValue;
 }
 
 -(void)GameOver{
- //   NSLog(@"---------Before Game Over Called-----IsCrashed: @%hhd, GOImage: @%d------",isCrashed, ![_imageGameOver isHidden]);
+    [timer1 invalidate];
+    timer1 = nil;
+    [timer2 invalidate];
+    timer2 = nil;
+    [timer3 invalidate];
+    timer3 = nil;
+    [timer4 invalidate];
+    timer4 = nil;
+    _imageGameOver.layer.zPosition = 1000;
+    //NSLog(@"---------Before Game Over Called-----IsCrashed: @%hhd, isVisibleGOImage: @%d------",isCrashed, ![_imageGameOver isHidden]);
     isCrashed = true;
     isGameOvered = true;
+    //NSLog(@"GameOver:- isGameOver:@%d",isGameOvered);
     [_slider setHidden:YES];
     [_imageOtherCar1 setHidden:YES];
     [_imageOtherCar2 setHidden:YES];
@@ -97,37 +115,19 @@ int resetValue;
     [_imageGameOver setHidden:NO];
     UIImage *image = [UIImage imageNamed:@"CrashedCar.jpg"];
     [_imageHeroCar setImage:image];
-  //  NSLog(@"---------After Game Over Called-----IsCrashed: @%hhd, GOImage: @%d------",isCrashed, ![_imageGameOver isHidden]);
+    //NSLog(@"---------After Game Over Called-----IsCrashed: @%hhd, isVisibleGOImage: @%d------",isCrashed, ![_imageGameOver isHidden]);
 }
 
 -(void)Crashed:(UIImageView*)imageTempOtherCar{
-   // NSLog(@"Crashed Function...!");
     CALayer *presentationLayerHeroCar = (CALayer*)[_imageHeroCar.layer presentationLayer];
     CALayer *presentationLayerOtherCar = (CALayer*)[imageTempOtherCar.layer presentationLayer];
-    NSLog(@"Intersect: @%d",CGRectIntersectsRect(presentationLayerHeroCar.frame, presentationLayerOtherCar.frame));
-  /*  NSLog(@"1) Cordinates:- HeroCar: X = @%f, Y = @%f; OtherCar: X = @%f, Y = @%f",
-          presentationLayerHeroCar.position.x,
-          presentationLayerHeroCar.position.y,
-          presentationLayerOtherCar.position.x,
-          presentationLayerOtherCar.position.y);
-    */
     if (CGRectIntersectsRect(presentationLayerHeroCar.frame, presentationLayerOtherCar.frame)) {
-        //presentationLayerHeroCar = (CALayer*)[_imageTemp1.layer presentationLayer];
-        //presentationLayerOtherCar = (CALayer*)[_imageTemp2.layer presentationLayer];
-    /*    NSLog(@"2) Cordinates:- HeroCar: X = @%f, Y = @%f; OtherCar: X = @%f, Y = @%f",
-              presentationLayerHeroCar.position.x,
-              presentationLayerHeroCar.position.y,
-              presentationLayerOtherCar.position.x,
-              presentationLayerOtherCar.position.y);
-*/
-     //        presentationLayerHeroCar = (CALayer*)[_imageHeroCar.layer presentationLayer];
-//        presentationLayerOtherCar = (CALayer*)[imageTempOtherCar.layer presentationLayer];
         [self GameOver];
     }
 }
 
 -(void)VibrateHeroCar:timer{
-    // NSLog(@"VibrateHeroCar, Crashed: @%hhd", isCrashed);
+//        NSLog(@"VibrateTimer:- fIsShowImage:@%d",![_imageGameOver isHidden]);
 //    if (!isCrashed) {
     [self SetMaxScore];
         [UIView animateWithDuration:0.5 animations:^{
@@ -142,37 +142,41 @@ int resetValue;
             }];
         }];
         [UIView commitAnimations];
-//        [self Crashed:_imageOtherCar1];
-//        [self Crashed:_imageOtherCar2];
 //    }
 }
 
 -(BOOL)IsCrashed:(UIImageView*)imageOtherCarTemp{
-    CGRect frameHeroCar = _imageHeroCar.frame;
-    CGRect frameOtherCar = imageOtherCarTemp.frame;
+    if (!isGameOvered) {
+     CGRect frameHeroCar = _imageHeroCar.frame;
+     CGRect frameOtherCar = imageOtherCarTemp.frame;
     if (((frameHeroCar.origin.y <= frameOtherCar.origin.y + frameOtherCar.size.height - 40) && (frameHeroCar.origin.y + frameHeroCar.size.height > frameOtherCar.origin.y + frameOtherCar.size.height))) {
         if (((frameHeroCar.origin.x + frameHeroCar.size.width > frameOtherCar.origin.x) &&
              (frameHeroCar.origin.x + frameHeroCar.size.width < frameOtherCar.origin.x + frameOtherCar.size.width)) ||
             ((frameHeroCar.origin.x > frameOtherCar.origin.x)
              && (frameHeroCar.origin.x < frameOtherCar.origin.x + frameOtherCar.size.width))) {
-            return true;
+                isGameOvered = true;
+                return true;
         }
     }
-    return false;
+    }
+       return false;
 }
 
 
 -(void)CheckCrash{
-    if ([self IsCrashed:_imageOtherCar1]){
-        [self GameOver];
-    }
-    if ([self IsCrashed:_imageOtherCar2]){
-        [self GameOver];
-        NSLog(@"Second crashed...!");
-    }
+        if ([self IsCrashed:_imageOtherCar1]){
+            //NSLog(@"First crashed...!");
+            [self GameOver];
+        }
+        if ([self IsCrashed:_imageOtherCar2]){
+           // NSLog(@"Second crashed...!");
+            [self GameOver];
+        }
+    
 }
 
 -(void)CheckCrashByTimer:timer{
+  //  NSLog(@"CheckCrashedTimer:- fIsShowImage:@%d",![_imageGameOver isHidden]);
     [self CheckCrash];
 }
 
@@ -180,7 +184,7 @@ int resetValue;
 
 - (IBAction)SliderValueChanged:(id)sender {
     isCrashed = false;
-    isGameOvered = false;
+  //  isGameOvered = false;
  //   if (!isCrashed) {
         //moving hero car right-left
         [UIView animateWithDuration:0.5 animations:^{
@@ -189,10 +193,6 @@ int resetValue;
             _imageHeroCar.frame = imageFrameHeroCar;
         }];
         [UIView commitAnimations];
-        
-        //checking for crash
- //       [self Crashed:_imageOtherCar1];
-//        [self Crashed:_imageOtherCar2];
  //   }
 }
 -(void)ResetCar1Position:(UIImageView*)imageTemp{
@@ -247,6 +247,7 @@ int resetValue;
 }
 
 -(void)OtherCar1:timer{
+  //      NSLog(@"OtherCar1Timer:- fIsShowImage:@%d",![_imageGameOver isHidden]);
   //  if (!isCrashedWithCar1) {
         [UIView animateWithDuration:0.4 animations:^{
             CGRect frameOtherCar = _imageOtherCar1.frame;
@@ -261,6 +262,7 @@ int resetValue;
 }
 
 -(void)OtherCar2:timer{
+    //    NSLog(@"OtehrCar2Timer:- IsShowImage:@%d",![_imageGameOver isHidden]);
   //  if (!isCrashedWithCar2) {
         [UIView animateWithDuration:0.4 animations:^{
             CGRect frameOtherCar = _imageOtherCar2.frame;

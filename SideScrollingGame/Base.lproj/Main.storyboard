@@ -107,7 +107,7 @@
                                         <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                         <state key="normal" title="Play Again"/>
                                         <connections>
-                                            <segue destination="pUt-Ib-ZkG" kind="presentation" id="bcI-8E-ayG"/>
+                                            <segue destination="pUt-Ib-ZkG" kind="presentation" id="Pr8-uR-CNf"/>
                                         </connections>
                                     </button>
                                 </subviews>
