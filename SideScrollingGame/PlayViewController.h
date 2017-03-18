@@ -23,5 +23,7 @@
 @property (strong, nonatomic) IBOutlet UILabel *labelMaxScoreGO;
 @property (strong, nonatomic) IBOutlet UILabel *labelGODisplay1;
 @property (strong, nonatomic) IBOutlet UILabel *labelGODisplay2;
+@property (strong, nonatomic) IBOutlet UIImageView *imageWhite1;
+@property (strong, nonatomic) IBOutlet UIImageView *imageWhite2;
 
 @end

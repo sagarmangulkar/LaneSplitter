@@ -255,7 +255,21 @@ NSTimer *timer4;
         imageTemp.frame = frameTemp;
     }
 }
+-(void)ResetWhite1Position:(UIImageView*)imageTemp{
+    if (imageTemp.frame.origin.y > 600) {
+        CGRect frameTemp = imageTemp.frame;
+        frameTemp.origin.y = -150;
+        imageTemp.frame = frameTemp;
+    }
+}
 
+-(void)ResetWhite2Position:(UIImageView*)imageTemp{
+    if (imageTemp.frame.origin.y > 600) {
+        CGRect frameTemp = imageTemp.frame;
+        frameTemp.origin.y = -100;
+        imageTemp.frame = frameTemp;
+    }
+}
 -(void)OtherCar1:timer{
   //      NSLog(@"OtherCar1Timer:- fIsShowImage:@%d",![_imageGameOver isHidden]);
   //  if (!isCrashedWithCar1) {
@@ -267,6 +281,28 @@ NSTimer *timer4;
             [self ResetCar1Position:_imageOtherCar1];
         }];
         [UIView commitAnimations];
+    
+    
+    //remove
+    [UIView animateWithDuration:0.4 animations:^{
+        CGRect fr = _imageWhite1.frame;
+        fr.origin.y = fr.origin.y + 100;
+        _imageWhite1.frame = fr;
+    } completion:^(BOOL finished){
+        [self ResetWhite1Position:_imageWhite1];
+    }];
+    [UIView commitAnimations];
+    
+    [UIView animateWithDuration:0.4 animations:^{
+        CGRect fr1 = _imageWhite2.frame;
+        fr1.origin.y = fr1.origin.y + 100;
+        _imageWhite2.frame = fr1;
+    } completion:^(BOOL finished){
+        [self ResetWhite2Position:_imageWhite2];
+    }];
+    [UIView commitAnimations];
+    
+    //remove
    //     isCrashedWithCar2 = false;
    // }
 }

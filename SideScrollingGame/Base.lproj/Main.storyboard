@@ -62,16 +62,20 @@
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="525"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="white.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="T5m-Gr-tIl">
+                                <rect key="frame" x="164" y="-121" width="14" height="280"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="white.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="bmI-xP-Ry1">
+                                <rect key="frame" x="164" y="262" width="14" height="225"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="OtherCar2.png" translatesAutoresizingMaskIntoConstraints="NO" id="RVm-Hz-zOx">
                                 <rect key="frame" x="57" y="155" width="50" height="100"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="OtherCar1.png" translatesAutoresizingMaskIntoConstraints="NO" id="Vrl-jT-mQ9">
                                 <rect key="frame" x="221" y="93" width="50" height="100"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="HeroCar.png" translatesAutoresizingMaskIntoConstraints="NO" id="HLI-OF-NSk">
-                                <rect key="frame" x="135" y="391" width="50" height="100"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="FUO-Lb-VXg">
@@ -83,6 +87,10 @@
                             </slider>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="game-over.png" translatesAutoresizingMaskIntoConstraints="NO" id="IAV-Zv-h7g">
                                 <rect key="frame" x="32" y="220" width="240" height="128"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="HeroCar.png" translatesAutoresizingMaskIntoConstraints="NO" id="HLI-OF-NSk">
+                                <rect key="frame" x="135" y="391" width="50" height="100"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="zY9-dE-yJc">
@@ -190,6 +198,8 @@
                         <outlet property="imageOtherCar1" destination="Vrl-jT-mQ9" id="YsN-dd-Tmt"/>
                         <outlet property="imageOtherCar2" destination="RVm-Hz-zOx" id="7rt-RM-p9I"/>
                         <outlet property="imageTemp2" destination="tDH-rA-tRl" id="Ka4-Na-2XN"/>
+                        <outlet property="imageWhite1" destination="T5m-Gr-tIl" id="zLy-mI-ywi"/>
+                        <outlet property="imageWhite2" destination="bmI-xP-Ry1" id="cOn-yP-0LX"/>
                         <outlet property="labelGODisplay1" destination="VUw-q0-gZZ" id="rdb-nd-3Xg"/>
                         <outlet property="labelGODisplay2" destination="OVw-m8-fqv" id="Y3N-aO-7mJ"/>
                         <outlet property="labelMaxScore" destination="rnb-bs-Idt" id="Hfw-OX-ixK"/>
@@ -200,7 +210,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RIc-HD-rip" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="513.75" y="466.90140845070425"/>
+            <point key="canvasLocation" x="663.75" y="436.26760563380282"/>
         </scene>
     </scenes>
     <resources>
@@ -210,6 +220,7 @@
         <image name="OtherCar2.png" width="359" height="726"/>
         <image name="Road.jpg" width="300" height="250"/>
         <image name="game-over.png" width="660" height="372"/>
+        <image name="white.jpg" width="512" height="512"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="VIg-f3-ILc"/>
